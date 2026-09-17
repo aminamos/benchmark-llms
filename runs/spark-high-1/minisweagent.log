@@ -1,0 +1,300 @@
+2026-09-16 18:02:49,469 - minisweagent - INFO - Loading dataset princeton-nlp/SWE-Bench_Verified, split test...
+2026-09-16 18:02:51,251 - minisweagent - INFO - Instance filter: 500 -> 10 instances
+2026-09-16 18:02:51,252 - minisweagent - INFO - Running on 10 instances...
+2026-09-16 18:02:51,252 - minisweagent - INFO - Building agent config from specs: ['swebench.yaml', 'configs/pilot.yaml', 'configs/models/spark-high.yaml', 'model.model_kwargs.extra_headers={"x-opencode-session": "bench-spark-high-1", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}']
+2026-09-16 18:02:52,901 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-b0e50643 -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-14508:latest sleep 2h
+2026-09-16 18:02:53,193 - minisweagent.environment - INFO - Started container minisweagent-b0e50643 with ID 7d77edbd6aa9750c068dd98744af12b2f35ccd4c7666181281c0fa708c85d9f6
+2026-09-16 18:06:40,944 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/astropy__astropy-14508/astropy__astropy-14508.traj.json'
+2026-09-16 18:06:40,949 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-b83950f9 -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.django_1776_django-12039:latest sleep 2h
+2026-09-16 18:06:41,107 - minisweagent.environment - INFO - Started container minisweagent-b83950f9 with ID de0b7bcb28af5431cca8f7f4a3524c99010b77257a44a8961aed4e5c1faf4b90
+2026-09-16 18:08:12,018 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/django__django-12039/django__django-12039.traj.json'
+2026-09-16 18:08:12,024 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-0b351d1b -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.django_1776_django-15161:latest sleep 2h
+2026-09-16 18:08:12,184 - minisweagent.environment - INFO - Started container minisweagent-0b351d1b with ID 80ebece93516a8b88c008e2145a7b809fc4a7275167899ab3ba3817a34d37078
+2026-09-16 18:10:56,611 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/django__django-15161/django__django-15161.traj.json'
+2026-09-16 18:10:56,616 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-95d91a28 -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.matplotlib_1776_matplotlib-25311:latest sleep 2h
+2026-09-16 18:10:56,760 - minisweagent.environment - INFO - Started container minisweagent-95d91a28 with ID a86bd1d8b8de0430adbfd13726648e88b2447a31bac0016ecf61daf7c91b1b70
+2026-09-16 18:17:19,797 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/matplotlib__matplotlib-25311/matplotlib__matplotlib-25311.traj.json'
+2026-09-16 18:17:19,803 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-e5511deb -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-4695:latest sleep 2h
+2026-09-16 18:17:19,937 - minisweagent.environment - INFO - Started container minisweagent-e5511deb with ID db2179c51a578bab2cd709a8f01aeff2c31a842cbe7b2b900fb38581cdabbc65
+2026-09-16 18:21:38,620 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/pydata__xarray-4695/pydata__xarray-4695.traj.json'
+2026-09-16 18:21:38,627 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-1efef4ba -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-7393:latest sleep 2h
+2026-09-16 18:21:38,766 - minisweagent.environment - INFO - Started container minisweagent-1efef4ba with ID fd5bcaa4ac2f87963403506267887734f7ee9281edd5056034593e94ef3ab047
+2026-09-16 18:23:38,518 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/pydata__xarray-7393/pydata__xarray-7393.traj.json'
+2026-09-16 18:23:38,525 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-aee971d2 -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest sleep 2h
+2026-09-16 18:23:38,664 - minisweagent.environment - INFO - Started container minisweagent-aee971d2 with ID acef0c4aaa4e16cc2ad16dba7eed659af0ee9326e84f74f431d4348c055860d6
+2026-09-16 18:26:14,319 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/pytest-dev__pytest-7236/pytest-dev__pytest-7236.traj.json'
+2026-09-16 18:26:14,326 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-90f4a0f7 -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-7889:latest sleep 2h
+2026-09-16 18:26:14,446 - minisweagent.environment - INFO - Started container minisweagent-90f4a0f7 with ID 944061e08c92e5444b033186f8f6ec4ea538f1a499c564862c83ab5fcb24f787
+2026-09-16 18:28:29,407 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/sphinx-doc__sphinx-7889/sphinx-doc__sphinx-7889.traj.json'
+2026-09-16 18:28:29,414 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-5aa6dc2d -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.sympy_1776_sympy-12419:latest sleep 2h
+2026-09-16 18:28:29,544 - minisweagent.environment - INFO - Started container minisweagent-5aa6dc2d with ID 3ddc1f91bb078d6cde1bb0c58491d20a25cfe252246f3674a2982e7cffaabdb2
+2026-09-16 18:34:20,576 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/sympy__sympy-12419/sympy__sympy-12419.traj.json'
+2026-09-16 18:34:20,581 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-2d4f7cfe -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.sympy_1776_sympy-15875:latest sleep 2h
+2026-09-16 18:34:20,742 - minisweagent.environment - INFO - Started container minisweagent-2d4f7cfe with ID 9e70b076e48fd92cfbdc5772aa78092f50fc5ae70415e8af749d83bd52cc7bd7
+2026-09-16 18:43:04,787 - minisweagent - ERROR - Error processing instance sympy__sympy-15875: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}
+Traceback (most recent call last):
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 2748, in response_api_handler
+    response = sync_httpx_client.post(
+        url=api_base,
+    ...<2 lines>...
+        **body_kwargs,
+    )
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/http_handler.py", line 1374, in post
+    _raise_masked_sync_error(e, stream)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/http_handler.py", line 485, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '429 Too Many Requests' for url 'https://opencode.ai/zen/v1/responses'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/responses/main.py", line 1282, in responses
+    response = base_llm_http_handler.response_api_handler(
+        model=model,
+    ...<15 lines>...
+        shared_session=kwargs.get("shared_session"),
+    )
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 2755, in response_api_handler
+    raise self._handle_error(
+          ~~~~~~~~~~~~~~~~~~^
+        e=e,
+        ^^^^
+        provider_config=responses_api_provider_config,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 6012, in _handle_error
+    provider_error: Final = provider_config.get_error_class(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error_message=error_text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+        status_code=status_code,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        headers=error_headers,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/base_llm/responses/transformation.py", line 229, in get_error_class
+    raise BaseLLMException(
+    ...<3 lines>...
+    )
+litellm.llms.base_llm.chat.transformation.BaseLLMException: {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/run/benchmarks/swebench.py", line 154, in process_instance
+    info = agent.run(task)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agents/default.py", line 98, in run
+    self.step()
+    ~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/run/benchmarks/utils/common.py", line 17, in step
+    return super().step()
+           ~~~~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agents/default.py", line 128, in step
+    return self.execute_actions(self.query())
+                                ~~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agents/default.py", line 149, in query
+    message = self.model.query(self.messages)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/models/litellm_response_model.py", line 53, in query
+    for attempt in retry(logger=logger, abort_exceptions=self.abort_exceptions):
+                   ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 438, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/models/litellm_response_model.py", line 55, in query
+    response = self._query(self._prepare_messages_for_api(messages), **kwargs)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/models/litellm_response_model.py", line 42, in _query
+    return litellm.responses(
+           ~~~~~~~~~~~~~~~~~^
+        model=self.config.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        **(self.config.model_kwargs | kwargs),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/utils.py", line 1756, in wrapper
+    raise e
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/utils.py", line 1602, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/responses/main.py", line 1315, in responses
+    raise litellm.exception_type(
+          ~~~~~~~~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        extra_kwargs=kwargs,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2675, in exception_type
+    raise e  # it's already mapped
+    ^^^^^^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2436, in exception_type
+    _map_openai_exception(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<5 lines>...
+        extra_information=extra_information,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 291, in _map_openai_exception
+    raise RateLimitError(
+    ...<4 lines>...
+    )
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}
+2026-09-16 18:43:04,813 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/sympy__sympy-15875/sympy__sympy-15875.traj.json'
+2026-09-16 18:49:29,489 - minisweagent - INFO - Loading dataset princeton-nlp/SWE-Bench_Verified, split test...
+2026-09-16 18:49:31,136 - minisweagent - INFO - Instance filter: 500 -> 10 instances
+2026-09-16 18:49:31,137 - minisweagent - INFO - Skipping 9 existing instances
+2026-09-16 18:49:31,138 - minisweagent - INFO - Running on 1 instances...
+2026-09-16 18:49:31,138 - minisweagent - INFO - Building agent config from specs: ['swebench.yaml', 'configs/pilot.yaml', 'configs/models/spark-high.yaml', 'model.model_kwargs.extra_headers={"x-opencode-session": "bench-spark-high-1", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}']
+2026-09-16 18:49:32,453 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-95de59e6 -w /testbed --rm --platform linux/amd64 docker.io/swebench/sweb.eval.x86_64.sympy_1776_sympy-15875:latest sleep 2h
+2026-09-16 18:49:32,761 - minisweagent.environment - INFO - Started container minisweagent-95de59e6 with ID 76929498ffabdb0a23f5944596b2bfd9cbe9e0a956da25c1ba5bcb5d6f32fa73
+2026-09-16 18:53:43,053 - minisweagent - ERROR - Error processing instance sympy__sympy-15875: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}
+Traceback (most recent call last):
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 2748, in response_api_handler
+    response = sync_httpx_client.post(
+        url=api_base,
+    ...<2 lines>...
+        **body_kwargs,
+    )
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/http_handler.py", line 1374, in post
+    _raise_masked_sync_error(e, stream)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/http_handler.py", line 485, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '429 Too Many Requests' for url 'https://opencode.ai/zen/v1/responses'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/responses/main.py", line 1282, in responses
+    response = base_llm_http_handler.response_api_handler(
+        model=model,
+    ...<15 lines>...
+        shared_session=kwargs.get("shared_session"),
+    )
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 2755, in response_api_handler
+    raise self._handle_error(
+          ~~~~~~~~~~~~~~~~~~^
+        e=e,
+        ^^^^
+        provider_config=responses_api_provider_config,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 6012, in _handle_error
+    provider_error: Final = provider_config.get_error_class(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        error_message=error_text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+        status_code=status_code,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        headers=error_headers,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/base_llm/responses/transformation.py", line 229, in get_error_class
+    raise BaseLLMException(
+    ...<3 lines>...
+    )
+litellm.llms.base_llm.chat.transformation.BaseLLMException: {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/run/benchmarks/swebench.py", line 154, in process_instance
+    info = agent.run(task)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agents/default.py", line 98, in run
+    self.step()
+    ~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/run/benchmarks/utils/common.py", line 17, in step
+    return super().step()
+           ~~~~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agents/default.py", line 128, in step
+    return self.execute_actions(self.query())
+                                ~~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agents/default.py", line 149, in query
+    message = self.model.query(self.messages)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/models/litellm_response_model.py", line 53, in query
+    for attempt in retry(logger=logger, abort_exceptions=self.abort_exceptions):
+                   ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 438, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/models/litellm_response_model.py", line 55, in query
+    response = self._query(self._prepare_messages_for_api(messages), **kwargs)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/models/litellm_response_model.py", line 42, in _query
+    return litellm.responses(
+           ~~~~~~~~~~~~~~~~~^
+        model=self.config.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        **(self.config.model_kwargs | kwargs),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/utils.py", line 1756, in wrapper
+    raise e
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/utils.py", line 1602, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/responses/main.py", line 1315, in responses
+    raise litellm.exception_type(
+          ~~~~~~~~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        extra_kwargs=kwargs,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2675, in exception_type
+    raise e  # it's already mapped
+    ^^^^^^^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2436, in exception_type
+    _map_openai_exception(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<5 lines>...
+        extra_information=extra_information,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 291, in _map_openai_exception
+    raise RateLimitError(
+    ...<4 lines>...
+    )
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}
+2026-09-16 18:53:43,081 - minisweagent - INFO - Saved trajectory to 'runs/spark-high-1/sympy__sympy-15875/sympy__sympy-15875.traj.json'

@@ -1,0 +1,8 @@
+# Union Alpha via opencode Zen. Use with: --model-class litellm ... OPENCODE_API_KEY
+# Anthropic-compatible endpoint; key + session header injected at runtime by
+# scripts/run_*.sh (KEY_ENV arg) so secrets never land in this file.
+model:
+  model_name: anthropic/union-alpha
+  cost_tracking: ignore_errors
+  model_kwargs:
+    api_base: https://opencode.ai/zen

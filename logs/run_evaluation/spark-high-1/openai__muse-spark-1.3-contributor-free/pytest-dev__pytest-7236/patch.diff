@@ -1,0 +1,34 @@
+diff --git a/src/_pytest/unittest.py b/src/_pytest/unittest.py
+index 773f545af..f03db50ea 100644
+--- a/src/_pytest/unittest.py
++++ b/src/_pytest/unittest.py
+@@ -222,7 +222,15 @@ class TestCaseFunction(Function):
+             # when absolutely needed
+             if self.config.getoption("usepdb"):
+                 self._explicit_tearDown = self._testcase.tearDown
+-                setattr(self._testcase, "tearDown", lambda *args: None)
++
++                def _delayed_tearDown(*args, **kwargs):
++                    # Record that tearDown was called by unittest, but delay
++                    # the actual call until teardown() so the user can still
++                    # access instance variables in the pdb prompt.
++                    _delayed_tearDown.called = True
++
++                _delayed_tearDown.called = False
++                setattr(self._testcase, "tearDown", _delayed_tearDown)
+ 
+             # we need to update the actual bound method with self.obj, because
+             # wrap_pytest_function_for_tracing replaces self.obj by a wrapper
+@@ -231,6 +239,12 @@ class TestCaseFunction(Function):
+                 self._testcase(result=self)
+             finally:
+                 delattr(self._testcase, self.name)
++                if self._explicit_tearDown is not None:
++                    # unittest may not have called tearDown at all (e.g., the test
++                    # was skipped via a decorator or setUp failed), in which case
++                    # we should not call tearDown explicitly.
++                    if not getattr(self._testcase.tearDown, "called", False):
++                        self._explicit_tearDown = None
+ 
+     def _prunetraceback(self, excinfo):
+         Function._prunetraceback(self, excinfo)

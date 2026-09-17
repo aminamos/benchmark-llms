@@ -1,0 +1,7 @@
+# Union Alpha via OpenRouter. Use with: --model-class openrouter
+# model_name is the raw OpenRouter model id (no openrouter/ prefix for this class).
+# cost_tracking: ignore_errors is REQUIRED for free/preview models (cost 0.0),
+# otherwise the run aborts with "No valid cost information".
+model:
+  model_name: stealth/union-alpha
+  cost_tracking: ignore_errors

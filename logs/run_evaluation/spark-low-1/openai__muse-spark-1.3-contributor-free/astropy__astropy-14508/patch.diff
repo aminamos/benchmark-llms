@@ -1,0 +1,48 @@
+diff --git a/astropy/io/fits/card.py b/astropy/io/fits/card.py
+index 118bfced8..9c9843736 100644
+--- a/astropy/io/fits/card.py
++++ b/astropy/io/fits/card.py
+@@ -1299,6 +1299,43 @@ def _format_value(value):
+ 
+ def _format_float(value):
+     """Format a floating number to make sure it gets the decimal point."""
++    # Try the shortest string representation that round-trips (i.e. str)
++    # first, since ``:.16G`` can produce unnecessarily long strings (e.g.
++    # 0.009125 becomes 0.009124999999999999) which may force comment
++    # truncation.  Only fall back to the ``:.16G`` formatting if the short
++    # representation does not fit in 20 characters.
++    try:
++        short_str = str(value)
++        if short_str.lower() not in (
++            "inf",
++            "+inf",
++            "-inf",
++            "infinity",
++            "+infinity",
++            "-infinity",
++            "nan",
++            "+nan",
++            "-nan",
++        ):
++            norm_str = short_str.replace("e", "E")
++            if "." not in norm_str and "E" not in norm_str:
++                norm_str += ".0"
++            elif "E" in norm_str:
++                significand, exponent = norm_str.split("E")
++                if exponent[0] in ("+", "-"):
++                    sign = exponent[0]
++                    exponent = exponent[1:]
++                else:
++                    sign = ""
++                norm_str = f"{significand}E{sign}{int(exponent):02d}"
++            if len(norm_str) <= 20:
++                try:
++                    if type(value)(norm_str) == value:
++                        return norm_str
++                except Exception:
++                    pass
++    except Exception:
++        pass
+     value_str = f"{value:.16G}"
+     if "." not in value_str and "E" not in value_str:
+         value_str += ".0"

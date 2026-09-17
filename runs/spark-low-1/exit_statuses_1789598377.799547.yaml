@@ -1,0 +1,12 @@
+instances_by_exit_status:
+    Submitted:
+    - astropy__astropy-14508
+    - django__django-12039
+    - django__django-15161
+    - matplotlib__matplotlib-25311
+    - pydata__xarray-4695
+    - pydata__xarray-7393
+    - pytest-dev__pytest-7236
+    - sphinx-doc__sphinx-7889
+    - sympy__sympy-12419
+    - sympy__sympy-15875

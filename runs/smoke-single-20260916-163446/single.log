@@ -1,0 +1,93 @@
+This is mini-swe-agent version 2.4.6.
+Check the v2 migration guide at https://klieret.short.gy/mini-v2-migration
+Loading global config from '/Users/amin/Library/Application 
+Support/mini-swe-agent/.env'
+minisweagent: INFO: Loading dataset from princeton-nlp/SWE-Bench_Verified, split
+test...                                                                         
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+minisweagent: INFO: Building agent config from specs: ['swebench.yaml',         
+'configs/pilot.yaml', 'configs/models/spark-default.yaml',                      
+'model.model_kwargs.api_key=sk-jdcSnaxvYXXsskShf9wjh9tifSFuuzNdQVdGzKUloBz9tZikr
+6gfBGfMkGQbdrOx', 'model.model_kwargs.extra_headers={"x-opencode-session":      
+"bench-smoke-single-20260916-163446", "User-Agent": "Mozilla/5.0 (Macintosh;    
+Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0     
+Safari/537.36"}']                                                               
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-df035075 -w /testbed --rm                                   
+docker.io/swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest sleep 2h 
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/r │
+│ un/benchmarks/swebench_single.py:89 in main                                  │
+│                                                                              │
+│    86 │   })                                                                 │
+│    87 │   config = recursive_merge(*configs)                                 │
+│    88 │                                                                      │
+│ ❱  89 │   env = get_sb_environment(config, instance)                         │
+│    90 │   agent = get_agent(                                                 │
+│    91 │   │   get_model(config=config.get("model", {})),                     │
+│    92 │   │   env,                                                           │
+│                                                                              │
+│ /Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/r │
+│ un/benchmarks/swebench.py:88 in get_sb_environment                           │
+│                                                                              │
+│    85 │   elif env_config["environment_class"] in ["singularity",            │
+│       "contree"]:                                                            │
+│    86 │   │   env_config["image"] = "docker://" + image_name                 │
+│    87 │                                                                      │
+│ ❱  88 │   env = get_environment(env_config)                                  │
+│    89 │   if startup_command := config.get("run",                            │
+│       {}).get("env_startup_command"):                                        │
+│    90 │   │   startup_command = Template(startup_command,                    │
+│       undefined=StrictUndefined).render(**instance)                          │
+│    91 │   │   out = env.execute({"command": startup_command})                │
+│                                                                              │
+│ /Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/e │
+│ nvironments/__init__.py:33 in get_environment                                │
+│                                                                              │
+│   30 def get_environment(config: dict, *, default_type: str = "") ->         │
+│      Environment:                                                            │
+│   31 │   config = copy.deepcopy(config)                                      │
+│   32 │   environment_class = config.pop("environment_class", default_type)   │
+│ ❱ 33 │   return get_environment_class(environment_class)(**config)           │
+│   34                                                                         │
+│                                                                              │
+│ /Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/e │
+│ nvironments/docker.py:59 in __init__                                         │
+│                                                                              │
+│    56 │   │   self.logger = logger or                                        │
+│       logging.getLogger("minisweagent.environment")                          │
+│    57 │   │   self.container_id: str | None = None                           │
+│    58 │   │   self.config = config_class(**kwargs)                           │
+│ ❱  59 │   │   self._start_container()                                        │
+│    60 │                                                                      │
+│    61 │   def get_template_vars(self, **kwargs) -> dict[str, Any]:           │
+│    62 │   │   return recursive_merge(self.config.model_dump(),               │
+│       platform.uname()._asdict(), kwargs)                                    │
+│                                                                              │
+│ /Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/e │
+│ nvironments/docker.py:91 in _start_container                                 │
+│                                                                              │
+│    88 │   │   │   self.config.container_timeout,                             │
+│    89 │   │   ]                                                              │
+│    90 │   │   self.logger.debug(f"Starting container with command:           │
+│       {shlex.join(cmd)}")                                                    │
+│ ❱  91 │   │   result = subprocess.run(                                       │
+│    92 │   │   │   cmd,                                                       │
+│    93 │   │   │   capture_output=True,                                       │
+│    94 │   │   │   text=True,                                                 │
+│                                                                              │
+│ /Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/py │
+│ thon3.13/subprocess.py:577 in run                                            │
+│                                                                              │
+│    574 │   │   │   raise                                                     │
+│    575 │   │   retcode = process.poll()                                      │
+│    576 │   │   if check and retcode:                                         │
+│ ❱  577 │   │   │   raise CalledProcessError(retcode, process.args,           │
+│    578 │   │   │   │   │   │   │   │   │    output=stdout, stderr=stderr)    │
+│    579 │   return CompletedProcess(process.args, retcode, stdout, stderr)    │
+│    580                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+CalledProcessError: Command '['docker', 'run', '-d', '--name', 
+'minisweagent-df035075', '-w', '/testbed', '--rm', 
+'docker.io/swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest', 
+'sleep', '2h']' returned non-zero exit status 125.

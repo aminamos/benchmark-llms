@@ -1,0 +1,75 @@
+diff --git a/sympy/concrete/summations.py b/sympy/concrete/summations.py
+index 372487664..0e2e460d2 100755
+--- a/sympy/concrete/summations.py
++++ b/sympy/concrete/summations.py
+@@ -876,6 +876,23 @@ def eval_sum(f, limits):
+     if definite and (dif < 100):
+         return eval_sum_direct(f, (i, a, b))
+     if isinstance(f, Piecewise):
++        # Handle Piecewise resulting from single KroneckerDelta summation,
++        # e.g. Sum(KroneckerDelta(i, j), (i, 0, n-1)) gives
++        # Piecewise((1, (0 <= j) & (j <= n-1)), (0, True)).
++        # If the condition holds for the whole summation range, the sum
++        # is just the sum of the corresponding expression.
++        if len(f.args) == 2 and f.args[1].expr is S.Zero and f.args[1].cond is S.true:
++            e, c = f.args[0].expr, f.args[0].cond
++            try:
++                from sympy.sets.sets import Interval
++                expected = Interval(a, b).as_relational(i)
++                if c == expected:
++                    res = eval_sum(e, limits)
++                    if res is None:
++                        return Sum(e, limits)
++                    return res
++            except Exception:
++                pass
+         return None
+     # Try to do it symbolically. Even when the number of terms is known,
+     # this can save time when b-a is big.
+diff --git a/sympy/matrices/expressions/diagonal.py b/sympy/matrices/expressions/diagonal.py
+index a0dc57a35..a9ba9908f 100755
+--- a/sympy/matrices/expressions/diagonal.py
++++ b/sympy/matrices/expressions/diagonal.py
+@@ -7,8 +7,16 @@ class DiagonalMatrix(MatrixExpr):
+     arg = property(lambda self: self.args[0])
+     shape = property(lambda self: (self.arg.shape[0], self.arg.shape[0]))
+ 
+-    def _entry(self, i, j):
+-        return S.Zero if i != j else self.arg[i, 0]
++    def _entry(self, i, j, **kwargs):
++        from sympy import Eq
++        from sympy.functions import KroneckerDelta
++        eq = Eq(i, j)
++        if eq is S.true:
++            return self.arg[i, 0]
++        elif eq is S.false:
++            return S.Zero
++        else:
++            return KroneckerDelta(i, j)*self.arg[i, 0]
+ 
+ class DiagonalOf(MatrixExpr):
+     arg = property(lambda self: self.args[0])
+diff --git a/sympy/matrices/expressions/matexpr.py b/sympy/matrices/expressions/matexpr.py
+index b4d759836..7d620210b 100755
+--- a/sympy/matrices/expressions/matexpr.py
++++ b/sympy/matrices/expressions/matexpr.py
+@@ -475,11 +475,16 @@ def _eval_inverse(self):
+     def conjugate(self):
+         return self
+ 
+-    def _entry(self, i, j):
+-        if i == j:
++    def _entry(self, i, j, **kwargs):
++        from sympy import Eq
++        from sympy.functions import KroneckerDelta
++        eq = Eq(i, j)
++        if eq is S.true:
+             return S.One
+-        else:
++        elif eq is S.false:
+             return S.Zero
++        else:
++            return KroneckerDelta(i, j)
+ 
+     def _eval_determinant(self):
+         return S.One

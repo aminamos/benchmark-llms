@@ -1,0 +1,9 @@
+# Muse Spark 1.3, default reasoning. Use with: --model-class litellm_response ... OPENCODE_API_KEY
+# Key + session header injected at runtime by scripts/run_*.sh (KEY_ENV arg).
+model:
+  model_name: openai/muse-spark-1.3-contributor-free
+  cost_tracking: ignore_errors
+  model_kwargs:
+    api_base: https://opencode.ai/zen/v1
+    max_output_tokens: 4000
+    store: false

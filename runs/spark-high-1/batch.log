@@ -1,0 +1,272 @@
+This is mini-swe-agent version 2.4.6.
+Check the v2 migration guide at https://klieret.short.gy/mini-v2-migration
+Loading global config from '/Users/amin/Library/Application 
+Support/mini-swe-agent/.env'
+minisweagent: INFO: Results will be saved to runs/spark-high-1                  
+Logging to 'runs/spark-high-1/minisweagent.log'
+minisweagent: INFO: Loading dataset princeton-nlp/SWE-Bench_Verified, split     
+test...                                                                         
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+minisweagent: INFO: Instance filter: 500 -> 10 instances                        
+minisweagent: INFO: Skipping 9 existing instances                               
+minisweagent: INFO: Running on 1 instances...                                   
+minisweagent: INFO: Building agent config from specs: ['swebench.yaml',         
+'configs/pilot.yaml', 'configs/models/spark-high.yaml',                         
+'model.model_kwargs.extra_headers={"x-opencode-session": "bench-spark-high-1",  
+"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)                  
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}']           
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-95de59e6 -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.sympy_1776_sympy-15875:latest sleep 2h      
+minisweagent.environment: INFO: Started container minisweagent-95de59e6 with ID 
+76929498ffabdb0a23f5944596b2bfd9cbe9e0a956da25c1ba5bcb5d6f32fa73                
+Retrying <unknown> in 4 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 4 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 4 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 8 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 16 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 32 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 60 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 60 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+Retrying <unknown> in 60 seconds as it raised RateLimitError: litellm.RateLimitError: RateLimitError: OpenAIException - {"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit exceeded. Please try again later."},"metadata":{}}.
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+minisweagent: ERROR: Error processing instance sympy__sympy-15875:              
+litellm.RateLimitError: RateLimitError: OpenAIException -                       
+{"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit     
+exceeded. Please try again later."},"metadata":{}}                              
+Traceback (most recent call last):                                              
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/cust
+om_httpx/llm_http_handler.py", line 2748, in response_api_handler               
+    response = sync_httpx_client.post(                                          
+        url=api_base,                                                           
+    ...<2 lines>...                                                             
+        **body_kwargs,                                                          
+    )                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/cust
+om_httpx/http_handler.py", line 1374, in post                                   
+    _raise_masked_sync_error(e, stream)                                         
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^                                         
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/cust
+om_httpx/http_handler.py", line 485, in _raise_masked_sync_error                
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None         
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '429 
+Too Many Requests' for url 'https://opencode.ai/zen/v1/responses'               
+For more information check:                                                     
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                    
+                                                                                
+During handling of the above exception, another exception occurred:             
+                                                                                
+Traceback (most recent call last):                                              
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/responses
+/main.py", line 1282, in responses                                              
+    response = base_llm_http_handler.response_api_handler(                      
+        model=model,                                                            
+    ...<15 lines>...                                                            
+        shared_session=kwargs.get("shared_session"),                            
+    )                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/cust
+om_httpx/llm_http_handler.py", line 2755, in response_api_handler               
+    raise self._handle_error(                                                   
+          ~~~~~~~~~~~~~~~~~~^                                                   
+        e=e,                                                                    
+        ^^^^                                                                    
+        provider_config=responses_api_provider_config,                          
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                          
+    )                                                                           
+    ^                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/cust
+om_httpx/llm_http_handler.py", line 6012, in _handle_error                      
+    provider_error: Final = provider_config.get_error_class(                    
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^                    
+        error_message=error_text,                                               
+        ^^^^^^^^^^^^^^^^^^^^^^^^^                                               
+        status_code=status_code,                                                
+        ^^^^^^^^^^^^^^^^^^^^^^^^                                                
+        headers=error_headers,                                                  
+        ^^^^^^^^^^^^^^^^^^^^^^                                                  
+    )                                                                           
+    ^                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/llms/base
+_llm/responses/transformation.py", line 229, in get_error_class                 
+    raise BaseLLMException(                                                     
+    ...<3 lines>...                                                             
+    )                                                                           
+litellm.llms.base_llm.chat.transformation.BaseLLMException:                     
+{"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit     
+exceeded. Please try again later."},"metadata":{}}                              
+                                                                                
+During handling of the above exception, another exception occurred:             
+                                                                                
+Traceback (most recent call last):                                              
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/run/
+benchmarks/swebench.py", line 154, in process_instance                          
+    info = agent.run(task)                                                      
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agen
+ts/default.py", line 98, in run                                                 
+    self.step()                                                                 
+    ~~~~~~~~~^^                                                                 
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/run/
+benchmarks/utils/common.py", line 17, in step                                   
+    return super().step()                                                       
+           ~~~~~~~~~~~~^^                                                       
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agen
+ts/default.py", line 128, in step                                               
+    return self.execute_actions(self.query())                                   
+                                ~~~~~~~~~~^^                                    
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/agen
+ts/default.py", line 149, in query                                              
+    message = self.model.query(self.messages)                                   
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/mode
+ls/litellm_response_model.py", line 53, in query                                
+    for attempt in retry(logger=logger, abort_exceptions=self.abort_exceptions):
+                   ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__
+.py", line 438, in __iter__                                                     
+    do = self.iter(retry_state=retry_state)                                     
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__
+.py", line 371, in iter                                                         
+    result = action(retry_state)                                                
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__
+.py", line 413, in exc_check                                                    
+    raise retry_exc.reraise()                                                   
+          ~~~~~~~~~~~~~~~~~^^                                                   
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/tenacity/__init__
+.py", line 184, in reraise                                                      
+    raise self.last_attempt.result()                                            
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^                                            
+  File                                                                          
+"/Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/pytho
+n3.13/concurrent/futures/_base.py", line 453, in result                         
+    return self.__get_result()                                                  
+           ~~~~~~~~~~~~~~~~~^^                                                  
+  File                                                                          
+"/Users/amin/.local/share/uv/python/cpython-3.13.15-macos-aarch64-none/lib/pytho
+n3.13/concurrent/futures/_base.py", line 402, in __get_result                   
+    raise self._exception                                                       
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/mode
+ls/litellm_response_model.py", line 55, in query                                
+    response = self._query(self._prepare_messages_for_api(messages), **kwargs)  
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/minisweagent/mode
+ls/litellm_response_model.py", line 42, in _query                               
+    return litellm.responses(                                                   
+           ~~~~~~~~~~~~~~~~~^                                                   
+        model=self.config.model_name,                                           
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                           
+    ...<2 lines>...                                                             
+        **(self.config.model_kwargs | kwargs),                                  
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                  
+    )                                                                           
+    ^                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/utils.py"
+, line 1756, in wrapper                                                         
+    raise e                                                                     
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/utils.py"
+, line 1602, in wrapper                                                         
+    result = original_function(*args, **kwargs)                                 
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/responses
+/main.py", line 1315, in responses                                              
+    raise litellm.exception_type(                                               
+          ~~~~~~~~~~~~~~~~~~~~~~^                                               
+        model=model,                                                            
+        ^^^^^^^^^^^^                                                            
+    ...<3 lines>...                                                             
+        extra_kwargs=kwargs,                                                    
+        ^^^^^^^^^^^^^^^^^^^^                                                    
+    )                                                                           
+    ^                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_c
+ore_utils/exception_mapping_utils.py", line 2675, in exception_type             
+    raise e  # it's already mapped                                              
+    ^^^^^^^                                                                     
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_c
+ore_utils/exception_mapping_utils.py", line 2436, in exception_type             
+    _map_openai_exception(                                                      
+    ~~~~~~~~~~~~~~~~~~~~~^                                                      
+        model=model,                                                            
+        ^^^^^^^^^^^^                                                            
+    ...<5 lines>...                                                             
+        extra_information=extra_information,                                    
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                    
+    )                                                                           
+    ^                                                                           
+  File                                                                          
+"/Users/amin/benchmark-llms/.venv/lib/python3.13/site-packages/litellm/litellm_c
+ore_utils/exception_mapping_utils.py", line 291, in _map_openai_exception       
+    raise RateLimitError(                                                       
+    ...<4 lines>...                                                             
+    )                                                                           
+litellm.exceptions.RateLimitError: litellm.RateLimitError: RateLimitError:      
+OpenAIException -                                                               
+{"type":"error","error":{"type":"FreeUsageLimitError","message":"Rate limit     
+exceeded. Please try again later."},"metadata":{}}                              
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-high-1/sympy__sympy-15875/sympy__sympy-15875.traj.json'             
+  Overall Progress ($0.00) ━━━━━━━━━━━━━━━━━━━━━━━ 1/1 100% 0:04:11 eta: 0:00:00
+┏━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Exit Status    ┃ Count ┃ Most recent instances                               ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ RateLimitError │     1 │ sympy__sympy-15875                                  │
+└────────────────┴───────┴─────────────────────────────────────────────────────┘

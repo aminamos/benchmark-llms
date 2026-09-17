@@ -1,0 +1,7 @@
+# Union Alpha via opencode Go. Use with: --model-class litellm ... OPENCODE_API_KEY
+# Key + session header injected at runtime like the Zen configs.
+model:
+  model_name: anthropic/union-alpha
+  cost_tracking: ignore_errors
+  model_kwargs:
+    api_base: https://opencode.ai/zen/go

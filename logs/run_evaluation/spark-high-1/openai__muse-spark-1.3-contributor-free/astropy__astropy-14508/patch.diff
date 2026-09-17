@@ -1,0 +1,30 @@
+diff --git a/astropy/io/fits/card.py b/astropy/io/fits/card.py
+index 118bfced8..1236ab40f 100644
+--- a/astropy/io/fits/card.py
++++ b/astropy/io/fits/card.py
+@@ -1299,7 +1299,24 @@ def _format_value(value):
+ 
+ def _format_float(value):
+     """Format a floating number to make sure it gets the decimal point."""
+-    value_str = f"{value:.16G}"
++    # Use the shortest string that round-trips (repr) instead of
++    # ``f"{value:.16G}"`` which can use more digits than necessary
++    # (e.g. 0.009125 -> 0.009124999999999999) and can also lose
++    # precision for values needing 17 significant digits.
++    # Convert numpy scalars to Python float so the formatted string
++    # round-trips as a double (which is how FITS parses values).
++    try:
++        val = float(value)
++    except Exception:
++        val = value
++    value_str = repr(val)
++    # repr uses lowercase 'e'/'inf'/'nan' while FITS (and previous use of
++    # 'G' format) uses uppercase 'E'/'INF'/'NAN'.
++    if "e" in value_str:
++        value_str = value_str.replace("e", "E")
++    else:
++        # handles 'inf', '-inf', 'nan'
++        value_str = value_str.upper() if value_str.lower() in ("inf", "-inf", "nan") else value_str
+     if "." not in value_str and "E" not in value_str:
+         value_str += ".0"
+     elif "E" in value_str:

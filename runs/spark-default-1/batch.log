@@ -1,0 +1,47 @@
+This is mini-swe-agent version 2.4.6.
+Check the v2 migration guide at https://klieret.short.gy/mini-v2-migration
+Loading global config from '/Users/amin/Library/Application 
+Support/mini-swe-agent/.env'
+minisweagent: INFO: Results will be saved to runs/spark-default-1               
+Logging to 'runs/spark-default-1/minisweagent.log'
+minisweagent: INFO: Loading dataset princeton-nlp/SWE-Bench_Verified, split     
+test...                                                                         
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+minisweagent: INFO: Instance filter: 500 -> 10 instances                        
+minisweagent: INFO: Skipping 7 existing instances                               
+minisweagent: INFO: Running on 3 instances...                                   
+minisweagent: INFO: Building agent config from specs: ['swebench.yaml',         
+'configs/pilot.yaml', 'configs/models/spark-default.yaml',                      
+'model.model_kwargs.extra_headers={"x-opencode-session":                        
+"bench-spark-default-1", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X  
+10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}']  
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-45ca6e4c -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.matplotlib_1776_matplotlib-25311:latest     
+sleep 2h                                                                        
+minisweagent.environment: INFO: Started container minisweagent-45ca6e4c with ID 
+2a48978122a05c69419bbba7b293db9a25e6d96745732a9a3fa14f2e8ba23ca3                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-default-1/matplotlib__matplotlib-25311/matplotlib__matplotlib-25311.
+traj.json'                                                                      
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-35c5c71e -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-4695:latest sleep 2h     
+minisweagent.environment: INFO: Started container minisweagent-35c5c71e with ID 
+197688e25e4d56c8b1264c945eaf71ba2c91addb6658e8d3d502f6059bb93f7d                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-default-1/pydata__xarray-4695/pydata__xarray-4695.traj.json'        
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-ed14d16d -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-7393:latest sleep 2h     
+minisweagent.environment: INFO: Started container minisweagent-ed14d16d with ID 
+c6757161a7eeb6837681e1051af0aa8ffbe65136d1e71ff84192d8407b942623                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-default-1/pydata__xarray-7393/pydata__xarray-7393.traj.json'        
+  Overall Progress ($0.00) ━━━━━━━━━━━━━━━━━━━━━━━ 3/3 100% 0:09:47 eta: 0:00:00
+┏━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Exit Status    ┃ Count ┃ Most recent instances                               ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Submitted      │     2 │ pydata__xarray-7393, pydata__xarray-4695            │
+│ LimitsExceeded │     1 │ matplotlib__matplotlib-25311                        │
+└────────────────┴───────┴─────────────────────────────────────────────────────┘

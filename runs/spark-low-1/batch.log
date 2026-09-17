@@ -1,0 +1,110 @@
+This is mini-swe-agent version 2.4.6.
+Check the v2 migration guide at https://klieret.short.gy/mini-v2-migration
+Loading global config from '/Users/amin/Library/Application 
+Support/mini-swe-agent/.env'
+minisweagent: INFO: Results will be saved to runs/spark-low-1                   
+Logging to 'runs/spark-low-1/minisweagent.log'
+minisweagent: INFO: Loading dataset princeton-nlp/SWE-Bench_Verified, split     
+test...                                                                         
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+minisweagent: INFO: Instance filter: 500 -> 10 instances                        
+minisweagent: INFO: Running on 10 instances...                                  
+minisweagent: INFO: Building agent config from specs: ['swebench.yaml',         
+'configs/pilot.yaml', 'configs/models/spark-low.yaml',                          
+'model.model_kwargs.extra_headers={"x-opencode-session": "bench-spark-low-1",   
+"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)                  
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}']           
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-44765a8c -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-14508:latest sleep 2h  
+minisweagent.environment: INFO: Started container minisweagent-44765a8c with ID 
+df9f0e38221c401370c3376448daa0143885ea99b907466a2d955abba88aa5ed                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/astropy__astropy-14508/astropy__astropy-14508.traj.json'      
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-0a22665e -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.django_1776_django-12039:latest sleep 2h    
+minisweagent.environment: INFO: Started container minisweagent-0a22665e with ID 
+583487e0793ca6f84d41c07402ba722e80583d2c451b02a6839736948b0acfb1                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/django__django-12039/django__django-12039.traj.json'          
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-34aff396 -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.django_1776_django-15161:latest sleep 2h    
+minisweagent.environment: INFO: Started container minisweagent-34aff396 with ID 
+6c1bdd644fd247d33a1e0c66da250d2010f3a6d8db15d9fc824a6db2b7901fad                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/django__django-15161/django__django-15161.traj.json'          
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-0fe9f803 -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.matplotlib_1776_matplotlib-25311:latest     
+sleep 2h                                                                        
+minisweagent.environment: INFO: Started container minisweagent-0fe9f803 with ID 
+dafb9f29288d52c5a6e8b68d591d127ac70ccc73c861d3e517ba739f55555e06                
+Retrying <unknown> in 4 seconds as it raised InternalServerError: litellm.InternalServerError: InternalServerError: OpenAIException - [SSL: SSLV3_ALERT_BAD_RECORD_MAC] ssl/tls alert bad record mac (_ssl.c:2660).
+Retrying <unknown> in 4 seconds as it raised InternalServerError: litellm.InternalServerError: InternalServerError: OpenAIException - [SSL: SSLV3_ALERT_BAD_RECORD_MAC] ssl/tls alert bad record mac (_ssl.c:2660).
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/matplotlib__matplotlib-25311/matplotlib__matplotlib-25311.traj
+.json'                                                                          
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-8a87e72c -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-4695:latest sleep 2h     
+minisweagent.environment: INFO: Started container minisweagent-8a87e72c with ID 
+d3d0316a42bca212973b446e85aca29b809f00ccd49d08061a39298f64b7ca5c                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/pydata__xarray-4695/pydata__xarray-4695.traj.json'            
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-a7f0d31f -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-7393:latest sleep 2h     
+minisweagent.environment: INFO: Started container minisweagent-a7f0d31f with ID 
+00aaf6fad1500f00a342718373984fe80a1f20ce136e08e2791748c45cb4a5e9                
+Retrying <unknown> in 4 seconds as it raised InternalServerError: litellm.InternalServerError: InternalServerError: OpenAIException - [SSL: SSLV3_ALERT_BAD_RECORD_MAC] ssl/tls alert bad record mac (_ssl.c:2660).
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/pydata__xarray-7393/pydata__xarray-7393.traj.json'            
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-18d65d3e -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest sleep 2h 
+minisweagent.environment: INFO: Started container minisweagent-18d65d3e with ID 
+d913716065cc96ef3d267dc39509f4cfa410b9d0ef7075719321bbc3f7fd035f                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/pytest-dev__pytest-7236/pytest-dev__pytest-7236.traj.json'    
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-183f2a60 -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-7889:latest sleep 2h 
+minisweagent.environment: INFO: Started container minisweagent-183f2a60 with ID 
+32e54beee47b26a4c1fa29ad72fcb72829c756d4a12b86d60cd60be907c4aac2                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/sphinx-doc__sphinx-7889/sphinx-doc__sphinx-7889.traj.json'    
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-fc55c5c3 -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.sympy_1776_sympy-12419:latest sleep 2h      
+minisweagent.environment: INFO: Started container minisweagent-fc55c5c3 with ID 
+bd604f1d7d9bcc7097f9a31f63656bb6bf633adbd9d1745b4fd56e44614e13a7                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/sympy__sympy-12419/sympy__sympy-12419.traj.json'              
+minisweagent.environment: DEBUG: Starting container with command: docker run -d 
+--name minisweagent-f6b52fd5 -w /testbed --rm --platform linux/amd64            
+docker.io/swebench/sweb.eval.x86_64.sympy_1776_sympy-15875:latest sleep 2h      
+minisweagent.environment: INFO: Started container minisweagent-f6b52fd5 with ID 
+667fd5bb85be2d9f1645bdac5b1c59bb03898254b14bea03487a34dc49561045                
+minisweagent: INFO: Saved trajectory to                                         
+'runs/spark-low-1/sympy__sympy-15875/sympy__sympy-15875.traj.json'              
+  Overall Progress ($0.00) ━━━━━━━━━━━━━━━━━━━━━ 10/10 100% 0:16:18 eta: 0:00:00
+┏━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Exit Status ┃ Count ┃ Most recent instances                                  ┃
+┡━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Submitted   │    10 │ sympy__sympy-15875, sympy__sympy-12419,                │
+│             │       │ sphinx-doc__...                                        │
+└─────────────┴───────┴────────────────────────────────────────────────────────┘

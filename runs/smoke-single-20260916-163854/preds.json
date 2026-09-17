@@ -1,0 +1,7 @@
+{
+  "pytest-dev__pytest-7236": {
+    "instance_id": "pytest-dev__pytest-7236",
+    "model_patch": "diff --git a/src/_pytest/unittest.py b/src/_pytest/unittest.py\nindex 773f545af..46d9184d8 100644\n--- a/src/_pytest/unittest.py\n+++ b/src/_pytest/unittest.py\n@@ -221,8 +221,14 @@ class TestCaseFunction(Function):\n             # TestCase instance interacts with the results object, so better to only do it\n             # when absolutely needed\n             if self.config.getoption(\"usepdb\"):\n-                self._explicit_tearDown = self._testcase.tearDown\n-                setattr(self._testcase, \"tearDown\", lambda *args: None)\n+                orig_tearDown = self._testcase.tearDown\n+                def _tearDown_stub(*args, **kwargs):\n+                    # Record that unittest.TestCase actually called tearDown(),\n+                    # so we know to call the real tearDown() later.\n+                    # Otherwise, e.g. when the test is skipped, we should not\n+                    # call tearDown().\n+                    self._explicit_tearDown = orig_tearDown\n+                setattr(self._testcase, \"tearDown\", _tearDown_stub)\n \n             # we need to update the actual bound method with self.obj, because\n             # wrap_pytest_function_for_tracing replaces self.obj by a wrapper\n",
+    "model_name_or_path": "openai/muse-spark-1.3-contributor-free"
+  }
+}

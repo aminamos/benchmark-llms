@@ -1,0 +1,79 @@
+diff --git a/astropy/io/fits/card.py b/astropy/io/fits/card.py
+index 118bfced8..9e9300670 100644
+--- a/astropy/io/fits/card.py
++++ b/astropy/io/fits/card.py
+@@ -1299,20 +1299,60 @@ def _format_value(value):
+ 
+ def _format_float(value):
+     """Format a floating number to make sure it gets the decimal point."""
+-    value_str = f"{value:.16G}"
+-    if "." not in value_str and "E" not in value_str:
+-        value_str += ".0"
+-    elif "E" in value_str:
+-        # On some Windows builds of Python (and possibly other platforms?) the
+-        # exponent is zero-padded out to, it seems, three digits.  Normalize
+-        # the format to pad only to two digits.
+-        significand, exponent = value_str.split("E")
+-        if exponent[0] in ("+", "-"):
+-            sign = exponent[0]
+-            exponent = exponent[1:]
+-        else:
+-            sign = ""
+-        value_str = f"{significand}E{sign}{int(exponent):02d}"
++    # Use the shortest string that round-trips the value, rather than a
++    # fixed precision format (e.g. ``.16G``) which can be longer than
++    # necessary and force truncation of comments.
++
++    def _normalize_float_str(s):
++        # FITS uses uppercase E for the exponent
++        if "e" in s:
++            s = s.replace("e", "E")
++        # str() gives inf/nan in lowercase; use uppercase for consistency
++        # with the previous formatting (which gave INF.0, NAN.0, etc.)
++        if s.lower() in (
++            "inf",
++            "-inf",
++            "+inf",
++            "infinity",
++            "-infinity",
++            "+infinity",
++            "nan",
++            "-nan",
++            "+nan",
++        ):
++            s = s.upper()
++        if "." not in s and "E" not in s:
++            s += ".0"
++        elif "E" in s:
++            # On some Windows builds of Python (and possibly other platforms?)
++            # the exponent is zero-padded out to, it seems, three digits.
++            # Normalize the format to pad only to two digits.
++            significand, exponent = s.split("E")
++            if exponent[0] in ("+", "-"):
++                sign = exponent[0]
++                exponent = exponent[1:]
++            else:
++                sign = ""
++            s = f"{significand}E{sign}{int(exponent):02d}"
++        return s
++
++    try:
++        # str() gives the shortest round-trip string for Python floats
++        # (same as repr()) and avoids the dtype prefix that repr() includes
++        # for numpy scalars in numpy >= 2.
++        value_str = _normalize_float_str(str(value))
++        # Ensure the formatted value round-trips when parsed as a float
++        # (FITS parses floats as Python floats).  For most values str()
++        # already round-trips, but e.g. for float32 values the short string
++        # may not, in which case fall back to the full double representation.
++        float_value = float(value)
++        if np.isfinite(float_value):
++            if float(value_str) != float_value:
++                value_str = _normalize_float_str(repr(float_value))
++        # else: non-finite (inf/nan): keep str-based formatting
++    except (ValueError, OverflowError):
++        # Fall back to the previous behavior if anything goes wrong
++        value_str = _normalize_float_str(f"{value:.16G}")
+ 
+     # Limit the value string to at most 20 characters.
+     str_len = len(value_str)

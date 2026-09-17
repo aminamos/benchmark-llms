@@ -1,0 +1,12 @@
+# Pilot overrides — merged ON TOP of the bundled swebench.yaml via:
+#   -c swebench.yaml -c configs/pilot.yaml -c <model-config>
+# Fair setup: identical agent/tools/steps/cost limit for every model.
+agent:
+  step_limit: 50
+  cost_limit: 1.0
+environment:
+  environment_class: docker
+  # SWE-bench images are amd64-only; Rosetta in the Colima VM runs them on arm64 Macs
+  run_args: ["--rm", "--platform", "linux/amd64"]
+  # First-time image pulls exceed the 120s default; pre-pull via scripts/pull_images.sh
+  pull_timeout: 1200

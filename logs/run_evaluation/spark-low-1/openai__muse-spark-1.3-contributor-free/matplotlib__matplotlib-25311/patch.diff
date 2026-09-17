@@ -1,0 +1,37 @@
+diff --git a/lib/matplotlib/offsetbox.py b/lib/matplotlib/offsetbox.py
+index 1dee8a23d9..d6f5503853 100755
+--- a/lib/matplotlib/offsetbox.py
++++ b/lib/matplotlib/offsetbox.py
+@@ -1500,12 +1500,31 @@ class DraggableBase:
+     coordinate and set a relevant attribute.
+     """
+ 
++    @property
++    def canvas(self):
++        figure = self.ref_artist.figure
++        return figure.canvas if figure is not None else None
++
++    def __getstate__(self):
++        state = self.__dict__.copy()
++        # The canvas cannot currently be pickled, but this has the benefit
++        # of meaning that a figure can be detached from one canvas, and
++        # re-attached to another.  The canvas is now a property anyway, so
++        # just drop any old "canvas" entry for backcompat.
++        state.pop("canvas", None)
++        return state
++
++    def __setstate__(self, state):
++        # "__setstate__" is only needed for backcompat of old pickles
++        # containing a "canvas" entry.
++        state.pop("canvas", None)
++        self.__dict__.update(state)
++
+     def __init__(self, ref_artist, use_blit=False):
+         self.ref_artist = ref_artist
+         if not ref_artist.pickable():
+             ref_artist.set_picker(True)
+         self.got_artist = False
+-        self.canvas = self.ref_artist.figure.canvas
+         self._use_blit = use_blit and self.canvas.supports_blit
+         self.cids = [
+             self.canvas.callbacks._connect_picklable(
